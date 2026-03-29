@@ -45,10 +45,9 @@ To add real content, update the entries in `data/works.ts` and place images in `
 
 This repo is ready for [Vercel](https://vercel.com): Next.js is auto-detected; no `vercel.json` is required.
 
-1. Push this repository to GitHub (see below).
-2. In Vercel: **Add New Project** → **Import** `konscodes/siyun-kim`.
-3. Leave defaults: **Framework Preset** Next.js, **Build Command** `next build`, **Output Directory** (managed by Vercel).
-4. **Deploy**. After the first deploy, connect a **custom domain** under Project → **Settings** → **Domains**.
+1. In Vercel: **Add New Project** → **Import** `konscodes/siyun-kim`.
+2. Leave defaults: **Framework Preset** Next.js, **Build Command** `next build`, **Output Directory** (managed by Vercel).
+3. **Deploy**. After the first deploy, connect a **custom domain** under Project → **Settings** → **Domains**.
 
 Optional: enable **Production Branch** `main` and **Preview** deployments for other branches in Project → **Settings** → **Git**.
 
