@@ -1,0 +1,46 @@
+.tile {
+  display: block;
+  break-inside: avoid;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-mid);
+}
+
+.tile:hover .image {
+  transform: scale(1.02);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.tile:hover .overlay {
+  opacity: 1;
+}
+
+.overlayTitle {
+  color: var(--white);
+  font-size: var(--font-size-nav);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 16px;
+}

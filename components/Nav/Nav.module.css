@@ -1,0 +1,51 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  text-transform: lowercase;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.separator {
+  font-size: var(--font-size-nav);
+  color: var(--mid);
+  user-select: none;
+}
+
+.link {
+  font-size: var(--font-size-nav);
+  letter-spacing: var(--letter-spacing-nav);
+  color: var(--mid);
+  text-transform: lowercase;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--black);
+}
+
+.link.active {
+  color: var(--black);
+}

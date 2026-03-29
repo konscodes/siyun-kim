@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Siyun Kim — Portfolio
 
-## Getting Started
+Minimal producer portfolio website for Siyun Kim.  
+Built with Next.js (App Router), TypeScript, and CSS Modules.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** — App Router, static site generation
+- **TypeScript** — type-safe throughout
+- **CSS Modules** — scoped, zero-runtime styles
+- **next/font** — self-hosted Inter via Google Fonts
+- **next/image** — optimized image delivery
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Opens at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All work entries live in [`data/works.ts`](data/works.ts). Each entry contains:
 
-## Learn More
+```ts
+{
+  slug: string          // URL path: /work/[slug]
+  title: string
+  year: number
+  client: string
+  role: string
+  description: string
+  thumbnailUrl: string  // replace with real image path or URL
+  thumbnailAspect: "landscape" | "portrait" | "square"
+  vimeoId: string       // Vimeo video ID (digits only)
+  stillImages: string[] // 2–3 still image URLs
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+To add real content, update the entries in `data/works.ts` and place images in `public/` (or use absolute URLs). Update the contact email in `app/contact/page.tsx` and replace the profile photo URL.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment (Vercel)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This repo is ready for [Vercel](https://vercel.com): Next.js is auto-detected; no `vercel.json` is required.
 
-## Deploy on Vercel
+1. Push this repository to GitHub (see below).
+2. In Vercel: **Add New Project** → **Import** `konscodes/siyun-kim`.
+3. Leave defaults: **Framework Preset** Next.js, **Build Command** `next build`, **Output Directory** (managed by Vercel).
+4. **Deploy**. After the first deploy, connect a **custom domain** under Project → **Settings** → **Domains**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Optional: enable **Production Branch** `main` and **Preview** deployments for other branches in Project → **Settings** → **Git**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build   # verify production build locally before pushing
+```
+
+No environment variables are required for the mock-data version. Add secrets in Vercel **Settings** → **Environment Variables** if you later introduce API keys or private URLs.
